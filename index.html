@@ -9,10 +9,10 @@
   integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
   crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
     (function() {
       emailjs.init("arC3BT3ucODe12i6u");
@@ -24,24 +24,27 @@
       emailjs.sendForm('service_k208jib', 'template_n15v6v5', event.target)
         .then(function() {
           alert('Message sent successfully!');
+          event.target.reset(); // Reset the form here
         }, function(error) {
           alert('Failed to send the message. Please try again.');
         });
     }
-  </script><title>Tope</title>
+  </script>
+  <title>Tope</title>
 </head>   
 <body>
   <header>
-    <a href="#" class="logo">Tope </a>
+    <a href="#" class="logo">Tope</a>
     <div id="menu-icon" class="menu-icon">
       <i class="fa-solid fa-bars"></i>
-       </div>
+    </div>
 
     <nav class="navbar">
       <a href="#home">Home</a>
       <a href="#services">Project</a>
       <a href="#cert">Certificates</a>
       <a href="#contact">Contact</a>
+    </nav>
   </header>
 
   <section class="home" id="home"> 
@@ -64,97 +67,96 @@
         </div>
 
         <a href="C:\Users\FULLBAR\Desktop\Portfolio\Christopher_Almeron_CV.pdf" class="btn" download="Your_CV.pdf">Download CV</a>
-
     </div>
   </section>
 
-<section class="services" id="services">
-  <br><br><br><br><br>
-  <center>
-  <h2 class="heading">Projects</h2>
-</center>
-<br><br><br><br><br>
-  <div class="services-container">
-    <div class="services-box">
-      <div class="service-info">
-        <h4><a href="https://p3ryong.github.io/natipuan-beach-/" target="_blank">Beach Resort Page</a></h4>
-        <img src="NATIPUAN.png" alt="">
+  <section class="services" id="services">
+    <br><br><br><br><br>
+    <center>
+      <h2 class="heading">Projects</h2>
+    </center>
+    <br><br><br><br><br>
+    <div class="services-container">
+      <div class="services-box">
+        <div class="service-info">
+          <h4><a href="https://p3ryong.github.io/natipuan-beach-/" target="_blank">Beach Resort Page</a></h4>
+          <img src="NATIPUAN.png" alt="">
+        </div>
+      </div>
+      <div class="services-box">
+        <div class="service-info">
+          <h4><a href="https://p3ryong.github.io/Al-LyGUI-Asean/" target="_blank">Asean Literarture Page</a></h4>
+          <img src="ASEAN.png" alt="">
+        </div>
+      </div>
+      <div class="services-box">
+        <div class="service-info">
+          <h4><a href="https://p3ryong.github.io/Donum_Dei/" target="_blank">Hotel and Resort Page</a></h4>
+          <img src="DONUM.png" alt="">
+        </div>
       </div>
     </div>
-    <div class="services-box">
-      <div class="service-info">
-        <h4><a href="https://p3ryong.github.io/Al-LyGUI-Asean/" target="_blank">Asean Literarture Page</a></h4>
-        <img src="ASEAN.png" alt="">
-      </div>
-    </div>
-    <div class="services-box">
-      <div class="service-info">
-        <h4><a href="https://p3ryong.github.io/Donum_Dei/" target="_blank">Hotel and Resort Page</a></h4>
-        <img src="DONUM.png" alt="">
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="cert" id="cert">
-  <br><br><br><br><br>
-  <center>
-  <h2 class="heading">Certificates</h2>
-</center>
-<br><br><br><br><br>
-  <div class="services-container">
-    <div class="services-box">
-      <div class="service-info">
-        <h4>CSS, Bootstrap, JavaScript, PHP Full Stack</h4>
-        <img src="udemy1.png" alt="">
+  <section class="cert" id="cert">
+    <br><br><br><br><br>
+    <center>
+      <h2 class="heading">Certificates</h2>
+    </center>
+    <br><br><br><br><br>
+    <div class="services-container">
+      <div class="services-box">
+        <div class="service-info">
+          <h4>CSS, Bootstrap, JavaScript, PHP Full Stack</h4>
+          <img src="udemy1.png" alt="">
+        </div>
+      </div>
+      <div class="services-box">
+        <div class="service-info">
+          <h4>PHP Master  Class - The Complete PHP Developer Course</h4>
+          <img src="udemy2.png" alt="">
+        </div>
+      </div>
+      <div class="services-box">
+        <div class="service-info">
+          <h4>Web Development Complete Course CSS, Bootstrap And JavaScript</h4>
+          <img src="udemy3.png" alt="">
+        </div>
       </div>
     </div>
-    <div class="services-box">
-      <div class="service-info">
-        <h4>PHP Master  Class - The Complete PHP Developer Course</h4>
-        <img src="udemy2.png" alt="">
-      </div>
-    </div>
-    <div class="services-box">
-      <div class="service-info">
-        <h4>Web Development Complete Course CSS, Bootstrap And JavaScript</h4>
-        <img src="udemy3.png" alt="">
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="contact" id="contact">
-  <center>
-  <h2 class="heading"> Contact <span>Me</span></h2>
-</center>
-<form onsubmit="sendEmail(event)">
-  <div class="input-box">
-    <input type="text" name="name" placeholder="Name" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="number" name="phone" placeholder="Phone Number" required>
-    <input type="text" name="subject" placeholder="Subject" required>
-  </div>
-  <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-  <input type="submit" value="Send Message" class="btn">
-</form>
-</section>
+  <section class="contact" id="contact">
+    <center>
+      <h2 class="heading"> Contact <span>Me</span></h2>
+    </center>
+    <form onsubmit="sendEmail(event)">
+      <div class="input-box">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="number" name="phone" placeholder="Phone Number" required>
+        <input type="text" name="subject" placeholder="Subject" required>
+      </div>
+      <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+      <input type="submit" value="Send Message" class="btn">
+    </form>
+  </section>
 
-<footer class="footer">
-  <div class="social">
-    <a href="https://www.linkedin.com/in/christopher-almeron-0527472a0/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-    <a href="https://web.facebook.com/almeronestanio/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-    <a href="https://www.instagram.com/topealmeron_/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-  </div>
-  <ul class="list">
-    <li><a href="services">Projects</a></li>
-    <li><a href="cert">Certificate</a></li>
-    <li><a href="contact">Contacct</a></li>
-  </ul>
-  <p class="copyright">
-    @ Christopher Almeron | All Right Reserved
-  </p>
-</footer>
+  <footer class="footer">
+    <div class="social">
+      <a href="https://www.linkedin.com/in/christopher-almeron-0527472a0/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://web.facebook.com/almeronestanio/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://www.instagram.com/topealmeron_/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+    <ul class="list">
+      <li><a href="services">Projects</a></li>
+      <li><a href="cert">Certificate</a></li>
+      <li><a href="contact">Contact</a></li>
+    </ul>
+    <p class="copyright">
+      @ Christopher Almeron | All Right Reserved
+    </p>
+  </footer>
 
   <script src="https://kit.fontawesome.com/60a8ac526a.js" crossorigin="anonymous"></script>
 
@@ -167,7 +169,7 @@
             navbar.classList.toggle('open');
         });
     });
-</script>
+  </script>
   
 </body>
 </html>
