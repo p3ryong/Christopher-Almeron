@@ -50,6 +50,7 @@
       width: 200px;
       height: 200px;
       background-color: #7b4bb7;
+      background: transparent;
       color: white;
       justify-content: center;
       align-items: center;
@@ -71,7 +72,8 @@
 <body>
   <header>
     <a href="#" class="logo">Tope</a>
-    <div id="menu-icon" class="menu-icon">
+    <div id="menu-icon" class="menu-icon" style="
+    background: transparent;">
       <i class="fa-solid fa-bars"></i>
     </div>
 
@@ -200,6 +202,17 @@
   font-weight: bold;">
     Message sent successfully!
   </div>
+  <script src="https://kit.fontawesome.com/60a8ac526a.js" crossorigin="anonymous"></script>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuIcon = document.getElementById('menu-icon');
+        const navbar = document.querySelector('.navbar');
+    
+        menuIcon.addEventListener('click', function() {
+            navbar.classList.toggle('open');
+        });
+    });
+  </script>
 </body>
 </html>
