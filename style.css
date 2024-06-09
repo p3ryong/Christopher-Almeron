@@ -79,6 +79,7 @@ header {
 
 .navbar a:hover,
 .navbar a.active {
+  background: transparent;
   color: var(--main-color);
   border-bottom: 3px solid var(--main-color);
 }
