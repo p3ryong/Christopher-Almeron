@@ -43,7 +43,6 @@
         });
     }
   </script>
-  
   <style>
     .success-message {
       display: none; /* Initially hidden */
@@ -64,12 +63,26 @@
       opacity: 0; /* Start hidden */
       transition: opacity 0.05s ease-in-out; /* Transition effect for showing and hiding */
     }
+    @keyframes fadeInFromLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .fade-in-from-left {
+      animation: fadeInFromLeft 1s ease forwards;
+    }
   </style>
 
 
   <title>Tope</title>
 </head>   
-<body>
+<body class="fade-in-from-left">
   <header>
     <a href="#" class="logo">Tope</a>
     <div id="menu-icon" class="menu-icon" style="
