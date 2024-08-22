@@ -19,29 +19,33 @@
     })();
     
     function sendEmail(event) {
-      event.preventDefault();
+  event.preventDefault();
 
-      // Reset the form immediately
+  console.log("Form data before sending:", event.target);
+
+  emailjs.sendForm('service_k208jib', 'template_n15v6v5', event.target)
+    .then(function() {
+      console.log("Email sent successfully!");
+      // Success message handling
+      const successMessage = document.getElementById('success-message');
+      successMessage.style.display = 'flex';
+      successMessage.style.opacity = '1';
+
+      // Reset the form after successful email send
       event.target.reset();
-  
-      emailjs.sendForm('service_k208jib', 'template_n15v6v5', event.target)
-        .then(function() {
-          // Show success message
-          const successMessage = document.getElementById('success-message');
-          successMessage.style.display = 'flex';
-          successMessage.style.opacity = '1';
 
-          // Hide the success message after 3 seconds
-          setTimeout(function() {
-            successMessage.style.opacity = '0';
-            setTimeout(function() {
-              successMessage.style.display = 'none';
-            }, 50); // Match this duration with the transition duration for smooth hiding
-          }, 3000);
-        }, function(error) {
-          alert('Failed to send the message. Please try again.');
-        });
-    }
+      // Hide the success message after 3 seconds
+      setTimeout(function() {
+        successMessage.style.opacity = '0';
+        setTimeout(function() {
+          successMessage.style.display = 'none';
+        }, 50); // Match this duration with the transition duration for smooth hiding
+      }, 3000);
+    }, function(error) {
+      console.error("Failed to send email:", error);
+      alert('Failed to send the message. Please try again.');
+    });
+}
   </script>
   <style>
     .success-message {
