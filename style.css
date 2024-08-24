@@ -604,7 +604,7 @@ span {
 }
 
 /* Hide buttons in the menu on smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 768px) and (max-width: 995px) {
   .navbar {
       display: none;
   }
@@ -620,3 +620,21 @@ span {
       background-attachment: fixed;
   }
 }
+
+@media (min-width: 769px) and (max-width: 995px) {
+  .navbar {
+      display: none;
+  }
+  .navbar.open {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  .main a {
+      display: none;
+  }
+  body {
+      background-attachment: fixed;
+  }
+}
+
