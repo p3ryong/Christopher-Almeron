@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="sheet.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" 
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
@@ -12,60 +13,48 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
   
+  <!-- EmailJS Initialization -->
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
     (function() {
       emailjs.init("arC3BT3ucODe12i6u");
     })();
     
+    // Function to handle the email form submission
     function sendEmail(event) {
   event.preventDefault();
 
-  console.log("Form data before sending:", event.target);
-
   emailjs.sendForm('service_k208jib', 'template_n15v6v5', event.target)
-    .then(function() {
-      console.log("Email sent successfully!");
-      // Success message handling
+    .then(function(response) {
+      console.log('SUCCESS!', response.status, response.text);
+
       const successMessage = document.getElementById('success-message');
-      successMessage.style.display = 'flex';
-      successMessage.style.opacity = '1';
+      if (successMessage) {
+        console.log('Success message element found.');
+        successMessage.style.display = 'flex';
+        successMessage.style.opacity = '1';
 
-      // Reset the form after successful email send
-      event.target.reset();
+        event.target.reset();
 
-      // Hide the success message after 3 seconds
-      setTimeout(function() {
-        successMessage.style.opacity = '0';
         setTimeout(function() {
-          successMessage.style.display = 'none';
-        }, 50); // Match this duration with the transition duration for smooth hiding
-      }, 3000);
+          successMessage.style.opacity = '0';
+          setTimeout(function() {
+            successMessage.style.display = 'none';
+          }, 500);
+        }, 3000);
+      } else {
+        console.error('Success message element not found.');
+      }
     }, function(error) {
-      console.error("Failed to send email:", error);
+      console.log('FAILED...', error);
       alert('Failed to send the message. Please try again.');
     });
 }
+
   </script>
+
   <style>
-    .success-message {
-      display: none; /* Initially hidden */
-      width: 200px;
-      height: 200px;
-      background-color: #7b4bb7;
-      color: white;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 10px;
-      z-index: 1000; /* Ensure it appears on top of other content */
-      opacity: 0; /* Start hidden */
-      transition: opacity 0.05s ease-in-out; /* Transition effect for showing and hiding */
-    }
+    /* Success message styles */
     @keyframes fadeInFromLeft {
       from {
         opacity: 0;
@@ -82,28 +71,28 @@
     }
   </style>
 
-
   <title>Tope</title>
-</head>   
+</head>
 <body class="fade-in-from-left">
   <header>
     <a href="#" class="logo">Tope</a>
-    <div id="menu-icon" class="menu-icon" style="
-    background: transparent;">
+    <div id="menu-icon" class="menu-icon" style="background: transparent;">
       <i class="fa-solid fa-bars"></i>
     </div>
 
     <nav class="navbar">
       <a href="#home">Home</a>
-      <a href="#services">Project</a>
+      <a href="#services1">Project</a>
+      <a href="#skills">Skills</a>
       <a href="#cert">Certificates</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
+  <!-- Home Section -->
   <section class="home" id="home"> 
     <div class="home-img">
-      <img src="profile.png" alt="">
+      <img src="profile.png" alt="Profile Image">
     </div>
     <div class="home-content">
       <h1>Hi, It's <span>Christopher</span></h1>
@@ -114,44 +103,73 @@
         Eager to collaborate in Agile teams, I am committed to continuous learning and 
         staying updated with the latest industry trends to provide innovative solutions.</p>
 
-        <div class="social-icon">
-           <a href="https://www.linkedin.com/in/christopher-almeron-0527472a0/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-           <a href="https://web.facebook.com/almeronestanio/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-           <a href="https://www.instagram.com/topealmeron_/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-        </div>
+      <div class="social-icon">
+        <a href="https://www.linkedin.com/in/christopher-almeron-0527472a0/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://web.facebook.com/almeronestanio/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/topealmeron_/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      </div>
 
-        <a href="Christopher_Almeron_CV.pdf" class="btn" download="Christopher_Almeron_CV.pdf">Download CV</a>
+      <a href="C:\Users\FULLBAR\Desktop\Portfolio\Christopher_Almeron_CV.pdf" class="btn" download="Your_CV.pdf">Download CV</a>
     </div>
   </section>
 
-  <section class="services" id="services">
-    <br><br><br><br><br>
-    <center>
-      <h2 class="heading">Projects</h2>
-    </center>
-    <br><br><br><br><br>
-    <div class="services-container">
-      <div class="services-box">
-        <div class="service-info">
-          <h4><a href="https://p3ryong.github.io/natipuan-beach-/" target="_blank">Beach Resort Page</a></h4>
-          <img src="NATIPUAN.png" alt="">
-        </div>
-      </div>
-      <div class="services-box">
-        <div class="service-info">
-          <h4><a href="https://p3ryong.github.io/Al-LyGUI-Asean/" target="_blank">Asean Literarture Page</a></h4>
-          <img src="ASEAN.png" alt="">
-        </div>
-      </div>
-      <div class="services-box">
-        <div class="service-info">
-          <h4><a href="https://p3ryong.github.io/Donum_Dei/" target="_blank">Hotel and Resort Page</a></h4>
-          <img src="DONUM.png" alt="">
-        </div>
+<!-- Projects Section -->
+<section class="services1" id="services1">
+  <center>
+    <h2 class="heading">Projects</h2>
+  <div class="services-container1">
+    <div class="service-box1">
+      <div class="service-info1">
+        <img src="NATIPUAN.png" alt="Natipuan Beach Resort Page">
+        <h4><a href="https://p3ryong.github.io/natipuan-beach-/" target="_blank">Beach Resort Page</a><p>Build this using html,css and JavaScript</p></h4>
       </div>
     </div>
-  </section>
+    <div class="service-box1">
+      <div class="service-info1">
+        <img src="ASEAN.png" alt="Asean Literature Page">
+        <h4><a href="https://p3ryong.github.io/Al-LyGUI-Asean/" target="_blank">Asean Literature Page</a><p>Build this using html,css and JavaScript</p></h4>
+      </div>
+    </div>
+    <div class="service-box1">
+      <div class="service-info1">
+        <img src="DONUM.png" alt="Donum Dei Hotel and Resort Page">
+        <h4><a href="https://p3ryong.github.io/Donum_Dei/" target="_blank">Hotel and Resort Page</a><p>Build this using html,css and JavaScript</p></h4>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+ <br><br>
+ <!-- Skills Section -->
+<center>
+  <section class="skills" id="skills">
+    <div class="skills-box" id="skills-box">
+        <h1>Skills</h1>
+        <h2>FrontEnd</h2>
+        <div class="row">
+            <img src="images/5.png" data-bg="images/5.png">
+            <img src="images/6.png" data-bg="images/6.png">
+            <img src="images/7.png" data-bg="images/7.png">
+        </div>
+        <br><br>
+        <h2>Frameworks</h2>
+        <div class="row">
+            <img src="images/1.png" data-bg="images/1.png">
+            <img src="images/2.png" data-bg="images/2.png">
+        </div>
+        <br><br>
+        <h2>BackEnd</h2>
+        <div class="row">
+            <img src="images/3.png" data-bg="images/3.png">
+            <img src="images/4.png" data-bg="images/4.png">
+        </div>
+    </div>
+</section>
 
+
+</center>
+
+  <!-- Certificates Section -->
   <section class="cert" id="cert">
     <br><br><br><br><br>
     <center>
@@ -162,27 +180,28 @@
       <div class="services-box">
         <div class="service-info">
           <h4>CSS, Bootstrap, JavaScript, PHP Full Stack</h4>
-          <img src="udemy1.png" alt="">
+          <img src="udemy1.png" alt="CSS, Bootstrap, JavaScript, PHP Full Stack">
         </div>
       </div>
       <div class="services-box">
         <div class="service-info">
-          <h4>PHP Master  Class - The Complete PHP Developer Course</h4>
-          <img src="udemy2.png" alt="">
+          <h4>PHP Master Class - The Complete PHP Developer Course</h4>
+          <img src="udemy2.png" alt="PHP Master Class">
         </div>
       </div>
       <div class="services-box">
         <div class="service-info">
           <h4>Web Development Complete Course CSS, Bootstrap And JavaScript</h4>
-          <img src="udemy3.png" alt="">
+          <img src="udemy3.png" alt="Web Development Complete Course">
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Contact Section -->
   <section class="contact" id="contact">
     <center>
-      <h2 class="heading"> Contact <span>Me</span></h2>
+      <h2 class="heading">Contact <span>Me</span></h2>
     </center>
     <form onsubmit="sendEmail(event)">
       <div class="input-box">
@@ -191,11 +210,15 @@
         <input type="number" name="phone" placeholder="Phone Number" required>
         <input type="text" name="subject" placeholder="Subject" required>
       </div>
-      <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+      <textarea name="message" cols="30" rows="10" placeholder="Your Message"></textarea>
       <input type="submit" value="Send Message" class="btn">
     </form>
+
+    <!-- Success message element -->
+    <div id="success-message" class="success-message">Message sent successfully!</div>
   </section>
 
+  <!-- Footer Section -->
   <footer class="footer">
     <div class="social">
       <a href="https://www.linkedin.com/in/christopher-almeron-0527472a0/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
@@ -212,15 +235,8 @@
     </p>
   </footer>
 
-  <div id="success-message" class="success-message" style="
-  font-size: 20px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: bold;">
-    Message sent successfully!
-  </div>
-  <script src="https://kit.fontawesome.com/60a8ac526a.js" crossorigin="anonymous"></script>
-
   <script>
+    // Menu icon toggle logic
     document.addEventListener('DOMContentLoaded', function() {
         const menuIcon = document.getElementById('menu-icon');
         const navbar = document.querySelector('.navbar');
